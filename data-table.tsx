@@ -29,6 +29,7 @@ interface User {
   contrasena_hash: string
   contrasena_md5: string
   contrasena_sha1: string
+  contrasena_rsa: string
   status: number
 }
 
@@ -48,6 +49,7 @@ export default function DataTable() {
     contrasena_hash: "",
     contrasena_md5: "",
     contrasena_sha1: "",
+    contrasena_rsa: "",
     status: 1,
   })
 
@@ -90,6 +92,7 @@ export default function DataTable() {
           contrasena_hash: "",
           contrasena_md5: "",
           contrasena_sha1: "",
+          contrasena_rsa: "",
           status: 1,
         })
       }
@@ -169,7 +172,7 @@ export default function DataTable() {
         <CardHeader className="flex flex-col space-y-1.5 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
           <div>
             <CardTitle className="text-2xl">Usuarios</CardTitle>
-            <CardDescription>Usuarios encriptados</CardDescription>
+            <CardDescription>Usuarios encriptados con Hash, MD5, SHA-1 y RSA</CardDescription>
           </div>
           <Button variant="outline" size="sm" className="flex items-center gap-2" onClick={() => setIsModalOpen(true)}>
             <Plus className="h-4 w-4" />
@@ -320,6 +323,15 @@ export default function DataTable() {
                   editingUser
                     ? setEditingUser({ ...editingUser, contrasena_sha1: e.target.value })
                     : setNewUser({ ...newUser, contrasena_sha1: e.target.value })
+                }
+              />
+              <Input
+                placeholder="Contraseña RSA"
+                value={editingUser ? editingUser.contrasena_rsa : newUser.contrasena_rsa}
+                onChange={(e) =>
+                  editingUser
+                    ? setEditingUser({ ...editingUser, contrasena_rsa: e.target.value })
+                    : setNewUser({ ...newUser, contrasena_rsa: e.target.value })
                 }
               />
             </div>
