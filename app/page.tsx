@@ -8,9 +8,10 @@ export default function Home() {
         <h1 className="text-4xl font-bold">Encriptacion en Hash, MD5, SHA-1 y RSA</h1>
         <p className="text-lg text-gray-600">Diego Andres Baquiax Barrios - 202108036</p>
         <p className="text-lg text-gray-600">Miguel Angel Garcia Sapon - 202108056</p>
+        <p className="text-lg text-gray-600">Marco Santiago López Ochoa - 202208027</p>
         <div className="flex flex-col space-y-4">
           <Link href="/login" passHref>
-            <Button className="w-full">Iniciar Sesión con hash</Button>
+            <Button className="w-full">Iniciar Sesión con HASH</Button>
           </Link>
           <Link href="/md5" passHref>
             <Button className="w-full">Iniciar Sesión con MD5</Button>
